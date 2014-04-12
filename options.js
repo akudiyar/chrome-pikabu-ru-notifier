@@ -6,8 +6,8 @@ YUI().use('event-base','node-style', 'array-extras', function (Y) {
 		//
 		// Adjust title and page heading
 		//
-		document.title = 'Настройки ' + title;
-		Y.one('h1').setHTML('Настройки ' + title);
+		document.title = 'РќР°СЃС‚СЂРѕР№РєРё ' + title;
+		Y.one('h1').setHTML('РќР°СЃС‚СЂРѕР№РєРё ' + title);
 
 		//
 		// Notifications
