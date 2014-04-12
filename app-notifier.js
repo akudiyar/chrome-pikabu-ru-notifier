@@ -18,19 +18,19 @@ YUI().use('base-notifier', function (Y) {
 	// Attributes
 	//
 	AppNotifier.ATTRS = {
-
+		
 		/**
-		 * Title of the extension
+		 * The title of the extentsion
 		 */ 
 		title : {
-			value : 'Notifier Extension Starter'
+			value : 'Pikabu.Ru Notifier'
 		},
-
+	
 		/**
 		 * The URL of the app
 		 */ 
 		url : {
-			value : 'http://www.random.org/integers/?num=1&min=1&max=50&col=1&base=10&format=html&rnd=new'
+			value : 'http://pikabu.ru'
 		},
 		
 		/**
@@ -39,16 +39,29 @@ YUI().use('base-notifier', function (Y) {
 		 */ 
 		domains : {
 			value : [
-				'www.random.org'
+				'pikabu.ru'
 			]
 		},
 
 		/**
-		 * The font color of the icon while the user is logged in to the app
+		 * Text to display to the user
+		 */
+		text : {
+			value : {
+				success     : 'У вас {num} непрочитанных сообщений на Pikabu',
+				notLoggedIn : 'Вы не вошли в совй профиль на Pikabu. Нажмите, что бы сделать это.',
+				notificationTitle : 'Пришло новое сообщение.'
+			}
+		},
+
+		/**
+		 * The background color of the icon text while the user is logged in to the app
 		 */ 
 		loggedInColor : {
-			value : [246,101,2,200]
+			value : [0,43,150,255]
 		}
+
+
 	};
 
 	Y.extend(AppNotifier, BaseNotifier, {
@@ -58,9 +71,20 @@ YUI().use('base-notifier', function (Y) {
 		 * items from the url specified under ATTRS.
 		 * @param {HTMLElement} node (YUI) DOM node representation of the page 
 		 * contents of ATTRS.url.
+		 * @returns Integer or null
 		 */ 
 		getNumberFromNode : function (node) {
-			return node.one('pre.data').get('text').replace(/[^\d]/,'');
+			var msgNum;
+			if (node) {   
+				if (msgNum = node.one('.personals').one('b')) {
+					return parseInt(msgNum.get('text'), 10);
+				}
+                else
+                {
+                    return 0;
+                }
+			}
+			return null;
 		}
 	});
 });

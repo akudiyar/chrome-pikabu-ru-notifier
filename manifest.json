@@ -1,24 +1,20 @@
-{
-	"name": "Notifier Extension Starter",
-	"version": "0.3",
-	"manifest_version": 2,
-	"description": "A generic notifier plugin.",
-	"browser_action": {
-		"default_icon": "browser-action-icon-inactive.png" 
-	},
-	"background": {
-		"page": "background.html"
-	},
-	"options_page": "options.html",
-	"permissions": [
-		"cookies",
-		"webRequest",
-		"webRequestBlocking",
-		"notifications",
-		"tabs",
-		"*://www.random.org/"
-	],
-	"web_accessible_resources" : [
-		"app.png"
-	]
+﻿{
+   "manifest_version": 2,
+   "name": "Pikabu.ru Notifier",
+   "description": "Расширение отображает количество непрочитанных сообщений не сайте pikabu.ru и уведомления о новых.",
+   "version": "0.2",
+   "icons": { 
+        "16":"icon16.png", 
+        "48":"icon48.png",
+        "48":"icon128.png"        
+    }, 
+   "background": {
+        "page": "background.html"
+   },
+   "browser_action": {
+        "default_icon": "browser-action-icon-inactive.png"
+   },
+   "options_page": "options.html",
+   "permissions": [ "cookies", "webRequest", "webRequestBlocking", "notifications", "tabs", "*://pikabu.ru/"],
+   "web_accessible_resources": [ "app.png", "browser-action-icon-active.png" ]
 }
