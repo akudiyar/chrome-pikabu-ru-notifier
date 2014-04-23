@@ -1,1 +1,1 @@
-var NOTIFIER = new AppNotifier();
+﻿var NOTIFIER = new AppNotifier();

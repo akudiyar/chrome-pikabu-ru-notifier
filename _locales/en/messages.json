@@ -1,0 +1,36 @@
+﻿{
+  "appName": {
+    "message": "Pikabu.ru Notifier"
+  },
+  "appDesc": {
+    "message": "Расширение отображает количество непрочитанных сообщений не сайте Pikabu.ru и уведомления о новых."
+  },
+  "success": {
+    "message": "You have {num} unread messages on Pikabu"
+  },
+  "notLoggedIn": {
+    "message": "You are currently not signed in to Pikabu. Click to sign in."
+  },
+  "notificationTitle": {
+    "message": "New message!"
+  },
+  "optionsTittle": {
+    "message": "Options for"
+  },
+  "optionsHeader": {
+    "message": "Settings for"
+  },
+  "optionsDNHeader": {
+    "message": "Desktop Notifications"
+  },
+  "optionsDNText": {
+    "message": "Would you like to receive desktop notifications?"
+  },
+  "optionsDNYes": {
+    "message": "Yes"
+  },
+  "optionsDNNo": {
+    "message": "No"
+  }
+  
+}

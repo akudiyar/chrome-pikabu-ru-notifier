@@ -1,0 +1,36 @@
+﻿{
+  "appName": {
+    "message": "Pikabu.ru Notifier"
+  },
+  "appDesc": {
+    "message": "Розширення відображає кількість непрочитанних повідомлень на Pikabu.ru та виводить сповіщення про нові."
+  },
+  "success": {
+    "message": "У вас {num} непрочитаних повідомлень на Pikabu"
+  },
+  "notLoggedIn": {
+    "message": "Вы не увійшли до свого профіля на Pikabu. Натисніть тут, щоб увійти."
+  },
+  "notificationTitle": {
+    "message": "Пришло нове повідомлення."
+  },
+  "optionsTittle": {
+    "message": "Параметри"
+  },
+  "optionsHeader": {
+    "message": "Налаштування"
+  },
+  "optionsDNHeader": {
+    "message": "Сповіщення на робочому столі"
+  },
+  "optionsDNText": {
+    "message": "Чи хочете ви отримувати сповіщення про нові повідомлення у області сповіщеннь?"
+  },
+  "optionsDNYes": {
+    "message": "Так"
+  },
+  "optionsDNNo": {
+    "message": "Ні"
+  }
+  
+}

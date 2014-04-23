@@ -1,7 +1,8 @@
-{
+﻿{
    "manifest_version": 2,
-   "name": "Pikabu.ru Notifier",
-   "description": "Расширение отображает количество непрочитанных сообщений не сайте pikabu.ru и уведомления о новых.",
+   "name": "__MSG_appName__",
+   "description": "__MSG_appDesc__",
+   "default_locale": "ru",
    "version": "0.2",
    "icons": { 
         "16":"icon16.png", 
@@ -16,5 +17,6 @@
    },
    "options_page": "options.html",
    "permissions": [ "cookies", "webRequest", "webRequestBlocking", "notifications", "tabs", "*://pikabu.ru/"],
+   "content_security_policy": "script-src 'unsafe-eval'; object-src 'self'",
    "web_accessible_resources": [ "app.png", "browser-action-icon-active.png" ]
 }

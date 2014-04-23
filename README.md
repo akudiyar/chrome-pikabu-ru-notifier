@@ -1,4 +1,4 @@
-Outlook.com Notifier
+﻿Pikabu.ru Notifier
 ====================
 
 Расширение для Google Chrome добавляет несколько полезных функций для пользователей Pikabu.ru:

@@ -1,0 +1,36 @@
+﻿{
+  "appName": {
+    "message": "Pikabu.ru Notifier"
+  },
+  "appDesc": {
+    "message": "Расширение отображает количество непрочитанных сообщений на сайте Pikabu.ru и выводит уведомления о новых."
+  },
+  "success": {
+    "message": "У вас {num} непрочитанных сообщений на Pikabu"
+  },
+  "notLoggedIn": {
+    "message": "Вы не вошли в совй профиль на Pikabu. Нажмите, что бы сделать это."
+  },
+  "notificationTitle": {
+    "message": "Пришло новое сообщение."
+  },
+  "optionsTittle": {
+    "message": "Параметры"
+  },
+  "optionsHeader": {
+    "message": "Настройки"
+  },
+  "optionsDNHeader": {
+    "message": "Уведомления в системном трее"
+  },
+  "optionsDNText": {
+    "message": "Хотите ли вы получать уведомления о новых сообщениях в системном трее?"
+  },
+  "optionsDNYes": {
+    "message": "Да"
+  },
+  "optionsDNSNo": {
+    "message": "Нет"
+  }
+  
+}

@@ -1,4 +1,4 @@
-//
+﻿//
 // Export
 //
 var AppNotifier;
@@ -23,7 +23,7 @@ YUI().use('base-notifier', function (Y) {
 		 * The title of the extentsion
 		 */ 
 		title : {
-			value : 'Pikabu.Ru Notifier'
+			value : chrome.i18n.getMessage("appName")
 		},
 	
 		/**
@@ -48,9 +48,9 @@ YUI().use('base-notifier', function (Y) {
 		 */
 		text : {
 			value : {
-				success     : 'У вас {num} непрочитанных сообщений на Pikabu',
-				notLoggedIn : 'Вы не вошли в совй профиль на Pikabu. Нажмите, что бы сделать это.',
-				notificationTitle : 'Пришло новое сообщение.'
+				success :           chrome.i18n.getMessage("success"),
+				notLoggedIn :       chrome.i18n.getMessage("notLoggedIn"),
+				notificationTitle : chrome.i18n.getMessage("notificationTitle")
 			}
 		},
 
@@ -74,13 +74,12 @@ YUI().use('base-notifier', function (Y) {
 		 * @returns Integer or null
 		 */ 
 		getNumberFromNode : function (node) {
-			var msgNum;
-			if (node) {   
-				if (msgNum = node.one('.personals').one('b')) {
-					return parseInt(msgNum.get('text'), 10);
+			var persNode, msgCount;
+			if (node && (persNode = node.one('.personals'))) {            
+				if (msgCount = persNode.one('b')) {
+					return parseInt(msgCount.get('text'), 10);
 				}
-                else
-                {
+                else{
                     return 0;
                 }
 			}

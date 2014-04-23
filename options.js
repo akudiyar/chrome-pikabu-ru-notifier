@@ -1,14 +1,16 @@
-YUI().use('event-base','node-style', 'array-extras', function (Y) {
-
-	var title = chrome.extension.getBackgroundPage().NOTIFIER.get('title');
+﻿YUI().use('event-base','node-style', 'array-extras', function (Y) {
 
 	Y.on('domready', function () {
 		//
-		// Adjust title and page heading
+		// Put localized strings to html
 		//
-		document.title = 'Настройки ' + title;
-		Y.one('h1').setHTML('Настройки ' + title);
-
+		document.title = chrome.i18n.getMessage("optionsTittle") + ' '+ chrome.i18n.getMessage("appName");
+		Y.one('#optionsHeader').setHTML(chrome.i18n.getMessage("optionsHeader") + ' ' + chrome.i18n.getMessage("appName"));
+        Y.one('#optionsDNHeader').setHTML(chrome.i18n.getMessage("optionsDNHeader"));
+        Y.one('#optionsDNText').setHTML(chrome.i18n.getMessage("optionsDNText"));
+        Y.one('#optionsDNYes').setHTML(chrome.i18n.getMessage("optionsDNYes"));
+        Y.one('#optionsDNNo').setHTML(chrome.i18n.getMessage("optionsDNNo"));
+        
 		//
 		// Notifications
 		//	
