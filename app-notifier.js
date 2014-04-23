@@ -30,7 +30,11 @@ YUI().use('base-notifier', function (Y) {
 		 * The URL of the app
 		 */ 
 		url : {
-			value : 'http://pikabu.ru'
+			value : {
+				base :    'http://pikabu.ru',
+                messages: 'http://pikabu.ru/freshitems.php',
+				login :   'http://pikabu.ru'
+			}
 		},
 		
 		/**

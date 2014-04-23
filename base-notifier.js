@@ -30,7 +30,11 @@ YUI.add('base-notifier', function (Y) {
 		 * The URL of the app
 		 */ 
 		url : {
-			value : null
+			value : {
+				base :    null,
+                messages: null,
+				login :   null
+			}
 		},
 		
 		/**
@@ -270,11 +274,11 @@ YUI.add('base-notifier', function (Y) {
 		 * @returns {Void}
 		 */ 
 		fetchNumber : function (xhr) {
-			if (this.get('url')) {
+			if (this.get('url').base) {
 				if (Y.Lang.isNull(this._number)) {
 					this.drawIcon("...");
 				}
-				Y.io(this.get('url'), { 
+				Y.io(this.get('url').base, { 
 					on: {
 						success: this.onFetchNumberSuccess,
 						failure: this.onFetchNumberFailure
@@ -403,14 +407,15 @@ YUI.add('base-notifier', function (Y) {
 			Y.Array.map(
 				me.get('domains'), 
 				function (e) {
-					var pattern = "*://*." + e + "/*";
+					var pattern = "*://*." + e + "/*",
+                        notifier = this.NOTIFIER;
 					chrome.tabs.query({
 						url : pattern
 					}, function (tabs) {
 						dLen = dLen-1;
 						var 
 							tabsLen = tabs.length,
-							i;
+							i, tabUrl;
 						for (i=0; i < tabsLen; i++) {
 							if (!tabs[i].active) {
 								chrome.tabs.update(tabs[i].id, {active: true});
@@ -420,9 +425,18 @@ YUI.add('base-notifier', function (Y) {
 							break;
 						}
 						if (!active && (dLen === 0)) {
-							active = true;
+							active = true;                           
+                            if(notifier._loggedIn) {
+                                if(notifier._number > 0) {
+                                    tabUrl = me.get('url').messages;
+                                } else {
+                                    tabUrl = me.get('url').base;
+                                }
+                            } else {
+                                tabUrl = me.get('url').login;
+                            }
 							chrome.tabs.create({
-								url: me.get('url'),
+								url: tabUrl,
 								windowId : chrome.windows.WINDOW_ID_CURRENT
 							}, function (tab) {
 								chrome.windows.update(tab.windowId, {focused: true});
